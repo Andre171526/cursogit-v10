@@ -50,3 +50,19 @@
     .menu a:hover{
         background-color: #3338;
     }
+/*Medium devices - Tablets*/
+    @media screen and (min-width: 768px){
+        nav .btn{
+            display: none   ;
+        }
+        .menu{
+            display: flex;
+            width: auto;
+        }
+    }
+/*Extra Large devices - HD Desktop*/
+    @media screen and (min-width: 1200px){
+        nav{
+            justify-content: space-around;
+        }
+    }
