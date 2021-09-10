@@ -30,11 +30,14 @@
     }
     /*Navegacion*/
     nav{
+        position: sticky;
+        top: 0;
+        z-index: 2;
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        background: linear-gradient(#c36, #63c)
+        background: linear-gradient(-45deg, #c36, #63c)
     }
     nav a{
         display: block;
@@ -43,9 +46,14 @@
         text-decoration: none;
     }
     .menu{
+        max-height: 0;
         width: 100%;
         padding:0;
         list-style: none;
+        overflow: hidden;
+    }
+    .menu.active{
+        max-height: 600px;
     }
     .menu a:hover{
         background-color: #3338;
@@ -58,6 +66,7 @@
         .menu{
             display: flex;
             width: auto;
+            max-height: 600px;
         }
     }
 /*Extra Large devices - HD Desktop*/
