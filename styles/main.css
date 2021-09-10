@@ -8,6 +8,45 @@
     h1,
     h2,
     h3,
-    header p{
+    header p,
+    .menu{
         margin: 0;
+    }
+    /*Clases especiales*/
+    .logo{
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .btn{
+        cursor: pointer;
+        margin: .5rem;
+        border: .1rem solid #eee;
+        color:#eee;
+        background-color: transparent;
+    }
+    .btn:hover{
+        color:#63c;
+        background-color: #eee;
+    }
+    /*Navegacion*/
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background: linear-gradient(#c36, #63c)
+    }
+    nav a{
+        display: block;
+        padding:.5rem;
+        color:#eee;
+        text-decoration: none;
+    }
+    .menu{
+        width: 100%;
+        padding:0;
+        list-style: none;
+    }
+    .menu a:hover{
+        background-color: #3338;
     }
