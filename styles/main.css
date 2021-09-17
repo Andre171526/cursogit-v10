@@ -64,11 +64,12 @@
         background-color: #c36;
     }
     .colabs{
-        margin: auto;
+        margin: 0 auto 1rem;
         border-collapse: collapse;
         color:#eee;
         text-shadow: 0 0 .25rem #333;
         background: linear-gradient(#c36, #63c);
+        box-shadow: -.5rem .5rem 1rem .5rem #666; /*-x+ -y+ blur color*/
     }
     .colabs caption,
     .colabs th,
