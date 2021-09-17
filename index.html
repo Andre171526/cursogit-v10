@@ -47,6 +47,20 @@
             <p>
                 Es el area de control, donde agregamos los archivos a los que queremos hacerle seguimiento, una vez hecho esto podemos realizar la confirmacion de cambios para poder recuperar dichas modificaciones, en caso de ser necesario. Cuando agregamos un archivo al INDEX git realiza una captura del codigo (SNAPSHOT) que permite identificar las lineas agregadas o eliminadas.
             </p>
+            <ul class="commands">
+                <li><strong>git status</strong> verifica el estado de los archivos del Working Directory, los mismos pueden ser
+                    <ul>
+                        <li><strong>untracked: </strong> no se esta realizando seguimiento del archivo, irrecuperable en caso de perdida</li>
+                        <li><strong>staged: </strong> los cambios fueron agregados al INDEX, pero no fueron confirmados</li>
+                        <li><strong>commited: </strong> los cambios fueron almacenados en un commit y pueden ser reestablecidos</li>
+                        <li><strong>modified: </strong> el archivo difiere con respecto a la ultima confirmacion</li>
+                    </ul>
+                </li>
+                <li><strong>git add &lt;file></strong> realiza la captura y agrega uno o varios archivos al INDEX</li>
+                <li><strong>git diff</strong> Compara los cambios almacenados en el INDEX con la ultima confirmacion</li>
+                <li><strong>git rm --cached &lt;file></strong> elimina del INDEX los archivos seleccionados</li>
+                <li><strong>git restore --staged &lt;file></strong> remueve del INDEX la ultima captura realizada</li>
+            </ul>
         </article>
         <article>
             <h3>Repository(Local/Remote)</h3>
