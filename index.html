@@ -104,6 +104,12 @@
             <p>
                 Apuntador estatico que se corresponde con el commit donde se haya aplicado y se utiliza para el versionado del proyecto, es una forma de facilitar la identificacion de cambios y la navegacion dentro del historial, ya que en lugar de utilizar las referencias o numeros de hash, nos permite utilizar nombres referencias como <em>v.1.0.0</em>.
             </p>
+            <ul class="commands">
+                <li><strong>git stash -l</strong> muestra una lista de las etiquetas del repositorio</li>
+                <li><strong>git stash &lt;name></strong> crea una etiqueta sobre el commit actual</li>
+                <li><strong>git stash &lt;old> &lt;new></strong> crea otra etiqueta en la misma posicion que la primera</li>
+                <li><strong>git stash -d &lt;tag></strong> elimina la etiqueta seleccionada</li>
+            </ul>
         </article>
         <article>
             <h3>STASH</h3>
