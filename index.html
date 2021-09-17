@@ -116,6 +116,13 @@
             <p>
                 Apuntador de la zona o pila temporal de cambios que se utiliza cuando nuestro trabajo esta incompleto y necesitamos desplazarnos dentro del historial de confirmaciones. Al utilizarlo se genera una referencia que integra los cambios del INDEX y el ultimo commit. Al reaplicar este comando se realiza una operacion Merge a la inversa.
             </p>
+            <ul class="commands">
+                <li><strong>git stash</strong> agrega los cambios del INDEX a la zona STASH</li>
+                <li><strong>git stash list</strong>muestra la lista de cambios almacenados en la zona STASH</li>
+                <li><strong>git stash apply</strong> aplica los cambios de la pila STASH al Working Directory</li>
+                <li><strong>git stash drop</strong> elimina los cambios de la pila STASH sin aplicarlos</li>
+                <li><strong>git stash pop</strong> aplica los cambios de la zona STASH y luego elimina la referencia</li>
+            </ul>
         </article>
     </section>
     <footer>
