@@ -97,6 +97,37 @@
     }
     .colabs tbody tr:nth-child(odd){background-color: #eee3;}
     .colabs tbody tr:nth-child(even){background-color: #9993;}
+    /* Contacto */
+    #contact{
+        max-width: 540px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1rem auto;
+        border-radius: .5rem;
+        padding: 1rem;
+        color:#eee;
+        background-color: #c36;
+    }
+    #contact label{
+        width:100%;
+        text-align: center;
+    }
+    #contact input{
+        width:80%;
+        border: .1rem solid #eee;
+        padding: .25rem .5rem;
+        outline: none;
+    }
+    #contact button{
+        border: .1rem solid #eee;
+        color: #eee;
+        background-color: transparent;
+    }
+    #contact button:hover{
+        color: #c36;
+        background-color: #eee;
+    }
 /*Medium devices - Tablets*/
     @media screen and (min-width: 768px){
         nav .btn{
