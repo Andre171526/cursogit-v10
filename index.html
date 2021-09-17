@@ -89,6 +89,15 @@
             <p>
                 Apuntador dinamico que siempre se corresponde con el ultimo commit de una linea de trabajo. Facilitan la navegacion, porque nos permiten volver al ultimo commit debido a que estos solamente identifican a sus ancestros y por lo tanto no reconocen cuales son las confirmaciones posteriores. Se utilizan para implementar o probar caracteristicas, sin comprometer la linea principal del proyecto.
             </p>
+            <ul class="commands">
+                <li><strong>git branch</strong> muestra las ramas que existen en el repositorio</li>
+                <li><strong>git branch &lt;name></strong> crea una nueva rama a partir del commit actual</li>
+                <li><strong>git branch -mv &lt;name></strong> permite renombrar la rama actual </li>
+                <li><strong>git branch -d &lt;branch></strong> elimina la rama si los cambios estan integrados al proyecto</li>
+                <li><strong>git push -u &lt;remote> &lt;branch></strong> agrega la referencias del historial al repositorio remoto</li>
+                <li><strong>git push -d &lt;remote> &lt;branch></strong> elimina la rama seleccionada del repositorio remoto</li>
+                <li><strong>git merge &lt;branch></strong> integra en la rama actual los cambios de la rama seleccionada</li>
+            </ul>
         </article>
         <article>
             <h3>TAG</h3>
