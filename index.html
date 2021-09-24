@@ -12,6 +12,7 @@
         <p>Desarrollo Colaborativo</p>
     </header>
     <section>
+<<<<<<< HEAD
       <h2>Areas de GIT</h2>
        <article>
            <h3>Working Directory</h3>
@@ -27,5 +28,174 @@
        </article> 
 
     </section>
+=======
+        <h2>Areas de GIT</h2>
+        <article>
+            <h3>Working Directory</h3>
+            <p>
+                Es el area de trabajo, donde rara vez vamos a utilizar la linea de comandos. Aquella donde realizamos las modificaciones de nuestro proyecto, tales como la creacion, edicion y eliminacion de archivos. El unico comando necesario sera <em>git init</em> para iniciar nuestro proyecto gestionado con la herramienta <strong>git</strong>.
+            </p>
+            <ul class="commands">
+                <li><strong>dir || ls</strong> muestra el contenido de la carpeta</li>
+                <li><strong>mkdir &lt;name></strong>crea una carpeta con el nombre especificado</li>
+                <li><strong>cd &lt;path></strong>cambia el directorio actual por la ruta seleccionada</li>
+                <li><strong>git init </strong> inicializa un repositorio de git</li>
+                <li><strong>rm -rf .git</strong> elimina el repositorio de git</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Staging Area (INDEX)</h3>
+            <p>
+                Es el area de control, donde agregamos los archivos a los que queremos hacerle seguimiento, una vez hecho esto podemos realizar la confirmacion de cambios para poder recuperar dichas modificaciones, en caso de ser necesario. Cuando agregamos un archivo al INDEX git realiza una captura del codigo (SNAPSHOT) que permite identificar las lineas agregadas o eliminadas.
+            </p>
+            <ul class="commands">
+                <li><strong>git status</strong> verifica el estado de los archivos del Working Directory, los mismos pueden ser
+                    <ul>
+                        <li><strong>untracked: </strong> no se esta realizando seguimiento del archivo, irrecuperable en caso de perdida</li>
+                        <li><strong>staged: </strong> los cambios fueron agregados al INDEX, pero no fueron confirmados</li>
+                        <li><strong>commited: </strong> los cambios fueron almacenados en un commit y pueden ser reestablecidos</li>
+                        <li><strong>modified: </strong> el archivo difiere con respecto a la ultima confirmacion</li>
+                    </ul>
+                </li>
+                <li><strong>git add &lt;file></strong> realiza la captura y agrega uno o varios archivos al INDEX</li>
+                <li><strong>git diff</strong> Compara los cambios almacenados en el INDEX con la ultima confirmacion</li>
+                <li><strong>git rm --cached &lt;file></strong> elimina del INDEX los archivos seleccionados</li>
+                <li><strong>git restore --staged &lt;file></strong> remueve del INDEX la ultima captura realizada</li>
+            </ul>
+        </article>
+        <article>
+            <h3>Repository (Local/Remote)</h3>
+            <p>
+                Area donde se almacenan las confirmaciones de las captura en formato BLOB(Binary Large Object File) para que puedan ser utilizadas al momento de movernos en nuestro proyecto y reestablecer el mismo. Git gestiona los cambios localmente, pero podemos enviar el historial de cambios a una direccion externa, tambien conocida como repositorio remoto.
+            </p>
+            <ul class="commands">
+                <li><strong>git commit</strong> abre el editor para realizar una confirmacion de cambios</li>
+                <li><strong>git log</strong> muestra el historial de confirmaciones de manera descendente</li>
+                <li><strong>git blame &lt;file></strong> muestra los autores de cada linea de codigo de un archivo</li>
+                <li><strong>git fetch &lt;remote></strong> captura el historial de cambios del repositorio remoto</li>
+                <li><strong>git push &lt;remote> &lt;branch></strong> envia el historial de cambios al repositorio remoto</li>
+            </ul>
+        </article>
+    </section>
+    <section>
+        <h2>Apuntadores de GIT</h2>
+        <article>
+            <h3>HEAD</h3>
+            <p>
+                Apuntador movil que indica al usario en que punto del historial de cambios se encuentra. Normalmente de deplaza conjuntamente con la rama en la que nos encontremos y podemos utilizarlo como referencia al movernos dentro del historial, teniendo en cuenta que los commits solamente identifican a sus ancestros.
+            </p>
+        </article>
+        <article>
+            <h3>BRANCH</h3>
+            <p>
+                Apuntador dinamico que siempre se corresponde con el ultimo commit de una linea de trabajo. Facilitan la navegacion, porque nos permiten volver al ultimo commit debido a que estos solamente identifican a sus ancestros y por lo tanto no reconocen cuales son las confirmaciones posteriores. Se utilizan para implementar o probar caracteristicas, sin comprometer la linea principal del proyecto.
+            </p>
+            <ul class="commands">
+                <li><strong>git branch</strong> muestra las ramas que existen en el repositorio</li>
+                <li><strong>git branch &lt;name></strong> crea una nueva rama a partir del commit actual</li>
+                <li><strong>git branch -mv &lt;name></strong> permite renombrar la rama actual </li>
+                <li><strong>git branch -d &lt;branch></strong> elimina la rama si los cambios estan integrados al proyecto</li>
+                <li><strong>git push -u &lt;remote> &lt;branch></strong> agrega la referencias del historial al repositorio remoto</li>
+                <li><strong>git push -d &lt;remote> &lt;branch></strong> elimina la rama seleccionada del repositorio remoto</li>
+                <li><strong>git merge &lt;branch></strong> integra en la rama actual los cambios de la rama seleccionada</li>
+            </ul>
+        </article>
+        <article>
+            <h3>TAG</h3>
+            <p>
+                Apuntador estatico que se corresponde con el commit donde se haya aplicado y se utiliza para el versionado del proyecto, es una forma de facilitar la identificacion de cambios y la navegacion dentro del historial, ya que en lugar de utilizar las referencias o numeros de hash, nos permite utilizar nombres referencias como <em>v.1.0.0</em>.
+            </p>
+            <ul class="commands">
+                <li><strong>git stash -l</strong> muestra una lista de las etiquetas del repositorio</li>
+                <li><strong>git stash &lt;name></strong> crea una etiqueta sobre el commit actual</li>
+                <li><strong>git stash &lt;old> &lt;new></strong> crea otra etiqueta en la misma posicion que la primera</li>
+                <li><strong>git stash -d &lt;tag></strong> elimina la etiqueta seleccionada</li>
+            </ul>
+        </article>
+        <article>
+            <h3>STASH</h3>
+            <p>
+                Apuntador de la zona o pila temporal de cambios que se utiliza cuando nuestro trabajo esta incompleto y necesitamos desplazarnos dentro del historial de confirmaciones. Al utilizarlo se genera una referencia que integra los cambios del INDEX y el ultimo commit. Al reaplicar este comando se realiza una operacion Merge a la inversa.
+            </p>
+            <ul class="commands">
+                <li><strong>git stash</strong> agrega los cambios del INDEX a la zona STASH</li>
+                <li><strong>git stash list</strong>muestra la lista de cambios almacenados en la zona STASH</li>
+                <li><strong>git stash apply</strong> aplica los cambios de la pila STASH al Working Directory</li>
+                <li><strong>git stash drop</strong> elimina los cambios de la pila STASH sin aplicarlos</li>
+                <li><strong>git stash pop</strong> aplica los cambios de la zona STASH y luego elimina la referencia</li>
+            </ul>
+        </article>
+    </section>
+    <footer>
+        <div class="social">
+            <a href="https://GitHub.com/c215714n/git-v10" target="_blank">GitHub</a>
+            <a href="https://GitLab.com/c215714n/git-v10" target="_blank">GitLab</a>
+            <a href="https://BitBucket.org/c215714n/git-v10" target="_blank">BitBucket</a>
+        </div>
+        <table class="colabs">
+            <caption>Colaboradores</caption>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Usuario</th>
+                    <th>Correo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cristian Racedo</td>
+                    <td>C215714N</td>
+                    <td>CristianDRacedo@hotmail.com</td>
+                </tr>
+                <tr>
+                    <td>Linus Torvalds</td>
+                    <td>Tux</td>
+                    <td>l.torvalds@linux.com</td>
+                </tr>
+                <tr>
+                    <td>Bill Gates</td>
+                    <td>Windows</td>
+                    <td>b.gates@microsoft.com</td>
+                </tr>
+                <tr>
+                    <td>Franco Crespo</td>
+                    <td>FC19</td>
+                    <td>francoscrespo@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Betsabe Caraballo</td>
+                    <td>Betsabe</td>
+                    <td>bcaraballo@itpatagonia.com</td>
+                </tr>
+                <tr>
+                    <td>Virginia Bassi</td>
+                    <td>vbassi</td>
+                    <td>vbassi@itpatagonia.com</td>
+                </tr>
+                <!-- Ingrese sus datos -->
+                <tr>
+                    <td>Daniel Brizuela</td>
+                    <td>bdh95210</td>
+                    <td>dbrizuela@itpatagonia.com</td>
+                </tr>
+                <tr>
+                    <td>Andreina Borges</td>
+                    <td>Andre171526</td>
+                    <td>aborges@itpatagonia.com</td>
+                </tr>
+            </tbody>
+        </table>
+        <form id="contact">
+            <label for="contactEmail">Ingrese su Correo</label>
+            <input 
+                id="contactEmail" 
+                type="email" 
+                placeholder="CristianDRacedo@hotmail.com"
+                required>
+            <button>ENVIAR</button>
+        </form>
+    </footer>
+    <script src="scripts/main.js"></script>
+>>>>>>> 3d1f01d5f70e67c6221a5f09281edbd0b7ed36ab
 </body>
 </html>
